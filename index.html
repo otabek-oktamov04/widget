@@ -59,8 +59,8 @@
   <script>
     function submitUrl() {
       // Get the input value (URL)
-      const widgetUrl = document.getElementById('widgetUrl').value;
-      const parentOrigin = window.parent !== window.top ? document.referrer : window.location.href;
+    //   const widgetUrl = document.getElementById('widgetUrl').value;
+    //   const parentOrigin = window.parent !== window.top ? document.referrer : window.location.href;
       const websiteId = window.frameElement?.id; 
       // Log URL to the console of the parent window
       console.log(widgetUrl,parentOrigin,websiteId)
