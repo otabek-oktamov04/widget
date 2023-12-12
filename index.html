@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Embedded Widget</title>
+  <style>
+    /* Style the widget */
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      margin: 0;
+    }
+    .widget {
+      border: 1px solid #ccc;
+      padding: 20px;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+    }
+    .submit-btn {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .close-btn {
+      background-color: #f44336;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="widget">
+    <h2>Hello! This is a Widget</h2>
+    <p>Welcome to this simple embedded widget.</p>
+    <input type="text" id="widgetUrl" value="https://your-widget-url.com/widget.html" readonly>
+    <button class="submit-btn" onclick="submitUrl()">Submit URL</button>
+    <button class="close-btn" onclick="closeWidget()">Close Widget</button>
+  </div>
+
+  <script>
+    function submitUrl() {
+      // Get the input value (URL)
+      const widgetUrl = document.getElementById('widgetUrl').value;
+      const parentOrigin = window.parent !== window.top ? document.referrer : window.location.href;
+      const websiteId = window.frameElement?.id; 
+      // Log URL to the console of the parent window
+      console.log(widgetUrl,parentOrigin,websiteId)
+    }
+
+    function closeWidget() {
+      // Communicate with the parent to close the iframe
+      window.parent.postMessage('closeWidget', '*');
+    }
+  </script>
+</body>
+</html>
