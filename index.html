@@ -61,6 +61,10 @@
       // Get the input value (URL)
     //   const widgetUrl = document.getElementById('widgetUrl').value;
     //   const parentOrigin = window.parent !== window.top ? document.referrer : window.location.href;
+    const widgetElement = document.querySelector('.widget');
+  if (widgetElement) {
+    widgetElement.style.display = 'none'; // Hide the widget by setting its display property to 'none'
+  }
       const websiteId = window.frameElement?.id; 
       // Log URL to the console of the parent window
       console.log(websiteId)
