@@ -1,82 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Modal with Iframe</title>
-  <script src="https://widget.cloudpayments.uz/bundles/cloudpayments.js"></script>
-  
-  <style>
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-    }
-    .modal-content {
-      background-color: #fefefe;
-      margin: 5% auto;
-      width: 400px;
-      max-width: 600px;
-      position: relative;
-    }
-    .close {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      color: #aaa;
-      font-size: 20px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    iframe {
-      width: 100%;
-      height: 400px;
-    }
-  </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Widget Example</title>
+    <script src="widget.js" defer></script>
+  </head>
 
-<!-- Button to open the modal -->
-<button id="openModalBtn">Open Modal</button>
+  <body style="padding: 0; margin: 0">
+    <button onclick="renderWidget({ id: 'widget1', isOpen: true })">
+      Open Widget
+    </button>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate,
+    adipisci rerum itaque esse corrupti soluta nam quibusdam aliquam accusantium
+    necessitatibus illo. Facilis reprehenderit pariatur provident quasi earum!
+    Dolore, aut vero?s
 
-<!-- The modal -->
-<div id="myModal" class="modal">
-  
-    <iframe id="1234567888" src="http://127.0.0.1:5500/index.html" title="Embedded Widget"></iframe>
-
-</div>
-
-<script>
-  // Get the modal and buttons
-  const modal = document.getElementById('myModal');
-  const openModalBtn = document.getElementById('openModalBtn');
-  const closeModalBtn = document.getElementById('closeModalBtn');
-
-  // Show modal when open button is clicked
-  openModalBtn.addEventListener('click', function() {
-    modal.style.display = 'block';
-  });
-
-  // Close modal when close button is clicked
-  closeModalBtn.addEventListener('click', function() {
-    modal.style.display = 'none';
-  });
-
-  // Close modal if user clicks outside the modal
-  window.addEventListener('click', function(event) {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
-
-
-
-</script>
-
-</body>
+    <script></script>
+  </body>
 </html>
